@@ -1,13 +1,56 @@
-:root{--navy:#1f214d;--navy-700:#181a3a;--primary:#3f63ff;}
-.bg-navy{background-color:var(--navy);}body{padding-top:64px;}
-.hero{min-height:64vh;background-image:radial-gradient(1000px 500px at 20% -20%, rgba(63,99,255,.35), transparent),radial-gradient(1000px 500px at 80% -20%, rgba(63,99,255,.35), transparent),linear-gradient(135deg,#0c0e2e,#22255a);position:relative;}
-.hero .hero-overlay{position:absolute;inset:0;background:radial-gradient(1200px 600px at 50% 10%, rgba(255,255,255,.08), transparent);} .fw-extrabold{font-weight:900;}
-.events-row{padding:.5rem .25rem;}
-.event-card{background:var(--navy-700);border-radius:.5rem;padding:.75rem 1rem;min-width:220px;box-shadow:0 1px 0 rgba(255,255,255,.05) inset,0 2px 8px rgba(0,0,0,.25);} 
-.event-card + .event-card{margin-left:.25rem;}
-.event-card-date{font-size:.9rem;opacity:.8;}
-.event-card-title{font-weight:700;}
-.event-card-sub{font-size:.85rem;opacity:.8;}
-.small-italic{font-style:italic;font-size:.9rem;opacity:.85;}
-.sponsor-logo{background:#fff;border:1px solid #e6e6e6;border-radius:.75rem;padding:1.25rem;min-height:84px;display:grid;place-items:center;font-weight:600;color:#777;box-shadow:0 2px 8px rgba(0,0,0,.04);}
-footer a{text-decoration:none;} footer a:hover{text-decoration:underline;}
+:root { --navy:#242056; }
+body { font-family: "Helvetica Neue", Arial, sans-serif; }
+.navbar-header a, .navbar-nav>li>a { color:#242056; }
+.navbar-header { background:#fff; }
+.navbar-header h2, .navbar-middle h4 a { color:#242056; text-decoration:none; }
+.navbar-middle { background:var(--navy); color:#fff; padding:8px 0; }
+.navbar-middle h4 { color:#fff; margin:8px 0; }
+.navbar-middle .affiliate { height:28px; margin-left:10px; filter:grayscale(100%) brightness(100%); }
+@media (max-width:1024px){
+  .navbar-header .btn { color:#242056 !important; }
+  .navbar-collapse { background:var(--navy); color:#fff; border:none; }
+  .navbar-nav>li>a { color:#fff; }
+}
+.yamm .dropdown-menu{ padding:20px 25px; }
+.yamm .inner h4{ margin-top:0; }
+.logo{ height:40px; }
+.affiliates img{ vertical-align:middle; }
+
+/* HERO */
+.hero{ position:relative; background-size:cover; background-position:center top; }
+.hero.hero-lg{ min-height:60vh; display:flex; align-items:center; justify-content:center; }
+.overlay-25::before{ content:""; position:absolute; inset:0; background:rgba(0,0,0,.25); }
+.hero_content{ position:relative; z-index:2; text-align:center; color:#fff; }
+.hero_header{ font-family:"Bebas Neue", system-ui, sans-serif; font-size:68px; letter-spacing:.5px; margin:0; }
+.hero_subheader{ margin:8px 0 16px; font-weight:400; }
+.btn-hero{ background:#fff; color:var(--navy)!important; border-radius:3px; }
+
+/* EVENTS STRIP */
+#home-events{ background:var(--navy); color:#fff; display:flex; gap:24px; align-items:center; padding:12px 16px; font-weight:500; flex-wrap:wrap; }
+#home-events i{ margin-right:6px; }
+
+/* SCHEDULE TILES */
+#home-scores{ display:flex; gap:12px; overflow:auto; padding:16px; background:#f7f8fb; }
+.scorebox{ background:#fff; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,.08); min-width:260px; }
+.scorebox table{ width:100%; }
+.scorebox .status td{ background:#eef1ff; color:#243; font-weight:600; padding:8px 10px; border-top-left-radius:8px; border-top-right-radius:8px; }
+.scorebox .team td, .scorebox .location td{ padding:8px 10px; }
+
+/* SPONSORS */
+#sponsor-wrapper{ background:#fff; padding:50px 0; }
+.sponsor-single{ line-height:100px; margin-bottom:16px; }
+.sponsor-single img{ max-width:100%; max-height:100px; }
+
+/* SOCIAL */
+#home-social-media{ background:var(--navy); color:#fff; text-align:center; padding:30px 0; }
+#home-social-media h2{ color:#fff; margin:0 0 10px; }
+#home-social-media a{ color:#fff; font-size:28px; }
+#home-social-media a:hover{ color:rgba(255,255,255,.6); }
+
+/* FOOTER */
+footer.dark-bg .inner{ padding:30px 0; }
+.footer-bottom{ border-top:1px solid #e5e7eb; padding:12px 0; }
+.footer-menu{ list-style:none; margin:0; padding:0; }
+.footer-menu>li{ display:inline-block; margin-left:12px; }
+.footer-menu a{ color:#222; text-decoration:none; }
+.footer-menu a:hover{ text-decoration:underline; }
