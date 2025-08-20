@@ -24,191 +24,87 @@
 <header class="hidden-print">
   <div class="navbar">
 
-    <!-- top rail -->
-    <div class="navbar-header">
-      <div class="container">
-        <ul class="info pull-left">
-          <li><a href="#"><i class="fas fa-sign-in-alt contact"></i> Log In</a></li>
-          <li><a href="#"><i class="fa fa-user-plus contact"></i> Sign Up</a></li>
-        </ul>
-        <ul class="social pull-right">
-          <li><a href="#" target="_blank"><i class="fa fa-hockey-puck"></i></a></li>
-        </ul>
-        <a class="btn responsive-menu pull-left" data-toggle="collapse" data-target=".navbar-collapse"><i class='fa fa-bars'></i></a>
-        <a class="btn responsive-menu pull-right" href="#"><i class="fa-solid fa-user-plus"></i></a>
-        <a class="navbar-brand mobile" href="/">
-          <img src="assets/img/logo.svg" class="logo" alt="">
-          <img src="assets/img/wordmark.svg" alt="">
-        </a>
-      </div>
+    <!-- Header: Top Rail -->
+<div class="navbar-header bg-white py-2 border-bottom">
+  <div class="container d-flex align-items-center justify-content-between">
+    <div class="d-flex align-items-center">
+      <a class="btn responsive-menu mr-3" data-toggle="collapse" data-target=".navbar-collapse">
+        <i class="fa fa-bars"></i>
+      </a>
+      <a class="navbar-brand d-flex align-items-center" href="/">
+        <img src="assets/img/logo.svg" class="logo mr-2" alt="BMHC Logo" style="height:40px;">
+        <img src="assets/img/wordmark.svg" alt="BMHC Wordmark" style="height:28px;">
+      </a>
     </div>
+    <ul class="info list-inline mb-0">
+      <!-- Add info items here if needed -->
+    </ul>
+  </div>
+</div>
 
-    <!-- middle rail -->
-    <div class="navbar-middle">
-      <div class="container">
-        <div class="pull-right affiliates">
-          <img src="assets/img/affiliate1.svg" class="affiliate">
-          <img src="assets/img/affiliate2.svg" class="affiliate">
-          <img src="assets/img/affiliate3.svg" class="affiliate">
-        </div>
-        <h4><a href="/">BlackMagic Hockey Club</a>&nbsp; <a href="#" target="_blank"><i class="icon-s-facebook fab fa-facebook"></i></a></h4>
-      </div>
+<!-- Header: Middle Rail -->
+<div class="navbar-middle bg-light py-2">
+  <div class="container d-flex align-items-center justify-content-between">
+    <div class="affiliates"></div>
+    <h4 class="mb-0 font-weight-bold">
+      <a href="/" class="text-dark">BlackMagic Hockey Club</a>
+      <a href="#" target="_blank" class="ml-2 text-dark">
+        <i class="fab fa-instagram"></i>
+      </a>
+    </h4>
+  </div>
+</div>
+
+<!-- Main Navigation -->
+<nav class="yamm navbar navbar-expand-lg navbar-light bg-white border-bottom">
+  <div class="container">
+    <a class="navbar-brand d-none d-lg-flex align-items-center" href="/">
+      <img src="assets/img/logo.svg" class="logo mr-2" alt="BMHC Logo" style="height:40px;">
+      <img src="assets/img/wordmark.svg" alt="BMHC Wordmark" style="height:28px;">
+    </a>
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav ml-auto">
+        <li class="mobile_and_tablet_only"><a href="#">Log In</a></li>
+        <li class="mobile_and_tablet_only"><a href="#">Sign Up</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle js-activated" data-hover="dropdown" data-delay="0">About</a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Mission, Vision, Values</a></li>
+            <li><a href="#">Arena Information</a></li>
+            <li><a href="#">Board of Directors</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle js-activated" data-hover="dropdown" data-delay="0">Programs</a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Learn to Play</a></li>
+            <li><a href="#">House League</a></li>
+            <li><a href="#">Travel Teams</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle js-activated" data-hover="dropdown" data-delay="0">Tournaments</a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Boji Blast</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Schedule</a></li>
+        <!-- ...existing mega menus... -->
+      </ul>
     </div>
+  </div>
+</nav>
 
-    <!-- main nav + yamm -->
-    <div class="yamm">
-      <div class="navbar-collapse collapse">
-        <div class="container">
-          <div class="navbar-brand">
-            <a href="/">
-              <span>
-                <nobr>
-                  <img src="assets/img/logo.svg" class="logo" alt="">
-                  <img src="assets/img/wordmark.svg" alt="">
-                </nobr>
-              </span>
-            </a>
-          </div>
-
-          <ul class="nav navbar-nav navbar-right">
-            <li class="mobile_and_tablet_only"><a href="#">Log In</a></li>
-            <li class="mobile_and_tablet_only"><a href="#">Sign Up</a></li>
-
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle js-activated" data-hover="dropdown" data-delay="0">About</a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Mission, Vision, Values</a></li>
-                <li><a href="#">Arena Information</a></li>
-                <li><a href="#">Board of Directors</a></li>
-              </ul>
-            </li>
-
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle js-activated" data-hover="dropdown" data-delay="0">Programs</a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Learn to Play</a></li>
-                <li><a href="#">House League</a></li>
-                <li><a href="#">Travel Teams</a></li>
-              </ul>
-            </li>
-
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle js-activated" data-hover="dropdown" data-delay="0">Tournaments</a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Boji Blast</a></li>
-              </ul>
-            </li>
-
-            <li><a href="#">Schedule</a></li>
-
-            <!-- Teams mega menu -->
-            <li class="dropdown yamm-fullwidth dropdown-desktop">
-              <a href="#" class="dropdown-toggle js-activated" data-hover="dropdown" data-delay="0">Teams</a>
-              <ul class="dropdown-menu yamm-dropdown-menu">
-                <li>
-                  <div class="yamm-content row">
-                    <div class="col-sm-2 inner xyz">
-                      <h4 class="nomargin">6U-8U Travel</h4>
-                      <ul class="mb10">
-                        <li><a href="#">Mini Mite (6U)</a></li>
-                        <li><a href="#">Mite (8U)</a></li>
-                      </ul>
-                    </div>
-                    <div class="col-sm-2 inner xyz">
-                      <h4 class="nomargin">In-House</h4>
-                      <ul class="mb10">
-                        <li><a href="#">House Mini-Mites</a></li>
-                        <li><a href="#">House Mites</a></li>
-                        <li><a href="#">House Squirts</a></li>
-                      </ul>
-                    </div>
-                    <div class="col-sm-2 inner xyz">
-                      <h4 class="nomargin">Learn to Skate</h4>
-                      <ul class="mb10">
-                        <li><a href="#">Wednesday</a></li>
-                        <li><a href="#">Saturday</a></li>
-                      </ul>
-                    </div>
-                    <div class="col-sm-2 inner xyz">
-                      <h4 class="nomargin">10U-14U Travel</h4>
-                      <ul class="mb10">
-                        <li><a href="#">Squirt (10U)</a></li>
-                        <li><a href="#">Peewee (12U)</a></li>
-                        <li><a href="#">Bantam (14U)</a></li>
-                      </ul>
-                    </div>
-                    <div class="col-sm-2 inner xyz">
-                      <h4 class="nomargin">High School</h4>
-                      <ul class="mb10">
-                        <li><a href="#">High School (19U)</a></li>
-                      </ul>
-                    </div>
-                    <div class="col-sm-2 inner xyz">
-                      <h4 class="nomargin">More</h4>
-                      <ul class="mb10">
-                        <li><a href="#">Goalies</a></li>
-                        <li><a href="#">Camps</a></li>
-                      </ul>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </li>
-
-            <!-- Resources mega menu -->
-            <li class="dropdown yamm-fullwidth dropdown-desktop">
-              <a href="#" class="dropdown-toggle js-activated" data-hover="dropdown" data-delay="0">Resources</a>
-              <ul class="dropdown-menu yamm-dropdown-menu">
-                <li>
-                  <div class="yamm-content row">
-                    <div class="col-sm-3 inner">
-                      <h4>For Parents</h4>
-                      <ul>
-                        <li><a href="#">FAQs</a></li>
-                        <li><a href="#">Refund Policy</a></li>
-                        <li><a href="#">Equipment Rental</a></li>
-                      </ul>
-                    </div>
-                    <div class="col-sm-3 inner">
-                      <h4>For Coaches</h4>
-                      <ul>
-                        <li><a href="#">Requirements</a></li>
-                        <li><a href="#">CEP</a></li>
-                        <li><a href="#">Safesport</a></li>
-                      </ul>
-                    </div>
-                    <div class="col-sm-3 inner">
-                      <h4>For Managers</h4>
-                      <ul>
-                        <li><a href="#">Reimbursement</a></li>
-                        <li><a href="#">Volunteer Points</a></li>
-                      </ul>
-                    </div>
-                    <div class="col-sm-3 inner">
-                      <h4>For Officials</h4>
-                      <ul>
-                        <li><a href="#">Certification</a></li>
-                        <li><a href="#">Equipment</a></li>
-                      </ul>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </li>
-          </ul><!-- /.nav -->
-        </div><!-- /.container -->
-      </div><!-- /.navbar-collapse -->
-    </div><!-- /.yamm -->
-  </div><!-- /.navbar -->
+  
 </header>
 
 <main>
   <section class="light-bg">
     <!-- HERO -->
     <div class="hero hero-image hero-lg has-hero-image has-hero-text overlay-25"
-         style="background-image:url(assets/img/hero.jpg); background-position:center top;">
+         style="background-image:url(assets/img/BMHCMainGold-Lite.png); background-position:center top;">
       <div class="hero_content">
-        <h1 class="hero_header">BlackMagic Hockey Club</h1>
+        <h1 class="hero_header">Black Magic Hockey Club</h1>
         <h2 class="hero_subheader">Adult Hockey</h2>
         <a href="#" class="hero_button btn btn-large btn-hero">Click Here to Get Started</a>
       </div>
@@ -218,7 +114,7 @@
     <div id="home-events" class="with-hero">
       <span><strong>BMHC Board Meeting</strong></span>
       <span><i class="fa-regular fa-calendar"></i> August 20, 2025 - 6:00pm to 8:00pm</span>
-      <span><i class="fa-solid fa-location-dot"></i> Elite Health &amp; Wellness</span>
+      <span><i class="fa-solid fa-location-dot"></i> The Clubhouse </span>
     </div>
 
     <!-- SCHEDULE CARDS -->
@@ -249,10 +145,10 @@
     <div id="sponsor-wrapper">
       <div id="sponsor-container" class="container">
         <div class="row">
-          <div class="col-xs-3 text-center sponsor-single"><a class="brought-by-link" href="#"><img class="brought-by-image" src="assets/img/sponsor1.png"></a></div>
-          <div class="col-xs-3 text-center sponsor-single"><a class="brought-by-link" href="#"><img class="brought-by-image" src="assets/img/sponsor2.png"></a></div>
-          <div class="col-xs-3 text-center sponsor-single"><a class="brought-by-link" href="#"><img class="brought-by-image" src="assets/img/sponsor3.png"></a></div>
-          <div class="col-xs-3 text-center sponsor-single"><a class="brought-by-link" href="#"><img class="brought-by-image" src="assets/img/sponsor4.png"></a></div>
+          <div class="col-xs-3 text-center sponsor-single"><a class="brought-by-link" href="#"><img class="brought-by-image" src="assets/img/Condors.png"></a></div>
+          <div class="col-xs-3 text-center sponsor-single"><a class="brought-by-link" href="#"><img class="brought-by-image" src="assets/img/Tyack.png"></a></div>
+          <div class="col-xs-3 text-center sponsor-single"><a class="brought-by-link" href="#"><img class="brought-by-image" src="assets/img/Copes.png"></a></div>
+          <div class="col-xs-3 text-center sponsor-single"><a class="brought-by-link" href="#"><img class="brought-by-image" src="assets/img/Remax.png"></a></div>
         </div>
       </div>
     </div>
@@ -260,9 +156,9 @@
     <!-- SOCIAL -->
     <div id="home-social-media">
       <div class="container">
-        <h2>FOLLOW BlackMagic Hockey</h2>
+        <h2>Follow Black Magic Hockey Club</h2>
         <div id="social-media-icons">
-          <a href="#" target="_blank"><i class="icon-s-facebook fab fa-facebook"></i></a>
+          <a href="#" target="_blank"><i class="icon-s-instagram fab fa-instagram"></i></a>
         </div>
       </div>
     </div>
@@ -277,7 +173,7 @@
       </div>
       <div class="col-md-3 col-sm-6 inner">
         <h4 class="mb0">About Us</h4>
-        <p>BlackMagic Hockey Club (BMHC) promotes the growth of Adult hockey and a positive experience for all participants.</p>
+        <p>Black Magic Hockey Club (BMHC) promotes the growth of Adult hockey and a positive experience for all participants.</p>
       </div>
       <div class="col-md-3 col-sm-6 inner">
         <h4 class="mb0">Contact</h4>
