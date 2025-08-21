@@ -1,7 +1,7 @@
 :root { --navy:#000000; }
 body { font-family: "Helvetica Neue", Arial, sans-serif; }
-.navbar-header a, .navbar-nav>li>a { color:#000000; }
-.navbar-header { background:#000000; }
+.navbar-header a, .navbar-nav>li>a { color:#ffffff; }
+.navbar-header { background:#ffffff; }
 .navbar-header h2, .navbar-middle h4 a { color:#C0B561; text-decoration:none; }
 .navbar-middle { background:var(--navy); color:#fff; padding:8px 0; }
 .navbar-middle h4 { color:#fff; margin:8px 0; }
@@ -54,3 +54,74 @@ footer.dark-bg .inner{ padding:30px 0; }
 .footer-menu>li{ display:inline-block; margin-left:12px; }
 .footer-menu a{ color:#222; text-decoration:none; }
 .footer-menu a:hover{ text-decoration:underline; }
+
+
+
+/* White nav with black text */
+.navbar-default { background:#fff; border-color:#e6e6e6; }
+.navbar-default .navbar-brand,
+.navbar-default .navbar-nav>li>a { color:#111; font-weight:600; }
+.navbar-default .navbar-nav>li>a:hover,
+.navbar-default .navbar-brand:hover { color:#000; background:transparent; }
+.navbar { border-radius:0; }
+
+/* Dropdown look */
+.dropdown-menu { border-radius:10px; }
+
+/* Utility bar text link */
+.navbar-middle a.middle-brand:hover { text-decoration:underline; }
+
+
+/* Static white nav like Lakes */
+.bmhc-nav { background:#fff !important; border-bottom:1px solid #ddd; box-shadow:0 1px 0 rgba(0,0,0,.04); }
+.bmhc-nav .navbar-brand { padding:10px 15px; background:transparent !important; }
+.bmhc-nav .navbar-brand img { height:38px; width:auto; display:block; }
+.bmhc-nav .navbar-nav>li>a { color:#222; font-weight:600; padding:22px 15px; }
+.bmhc-nav .navbar-nav>li>a:hover,
+.bmhc-nav .navbar-nav>.open>a,
+.bmhc-nav .navbar-nav>.open>a:focus,
+.bmhc-nav .navbar-nav>.open>a:hover { color:#000; background:transparent; }
+.bmhc-nav .dropdown-menu { border-radius:10px; }
+
+/* Kill any previous "transparent/sticky" navbar overrides */
+header .navbar,
+header .navbar-default { background:#fff !important; position:static; }
+
+
+/* ===== BMHC Navbar (Bootstrap 3 + YAMM) ===== */
+.navbar-bmhc {background:#fff;border-bottom:1px solid #ddd;box-shadow:0 1px 0 rgba(0,0,0,.04);}
+.navbar-bmhc .navbar-brand {padding:10px 15px;}
+.navbar-bmhc .navbar-brand img{height:40px;width:auto;display:block;}
+
+.navbar-bmhc .nav>li>a{
+  color:#111;font-weight:700;letter-spacing:.02em;
+  padding:22px 16px;position:relative;transition:background .15s ease;
+}
+.navbar-bmhc .nav>li>a:hover,
+.navbar-bmhc .nav>li.open>a{background:#f8f8f9;color:#000;}
+
+ /* “tab” underline on hover/open */
+.navbar-bmhc .nav>li>a:after{
+  content:"";position:absolute;left:0;right:0;bottom:-1px;height:4px;
+  background:transparent;transition:background .15s ease;
+}
+.navbar-bmhc .nav>li>a:hover:after,
+.navbar-bmhc .nav>li.open>a:after,
+.navbar-bmhc .nav>li.active>a:after{background:#C0B561;} /* gold */
+
+ /* YAMM mega menu panel */
+.yamm .dropdown-menu{border:1px solid #e6e6e6;border-radius:12px;padding:0;margin-top:-1px;}
+.yamm .yamm-content{padding:20px 24px;}
+.yamm .yamm-content h5{margin:6px 0 10px;font-weight:700;color:#111;}
+.yamm .yamm-content ul{margin:0;padding:0;list-style:none;}
+.yamm .yamm-content li a{display:block;padding:6px 0;color:#333;text-decoration:none;}
+.yamm .yamm-content li a:hover{color:#000;text-decoration:underline;}
+
+ /* Mobile collapses to stacked links */
+@media (max-width: 991px){
+  .yamm .dropdown-menu{position:static;float:none;width:auto;box-shadow:none;border:0;border-radius:0;margin:0;}
+  .yamm .yamm-content{padding:10px 15px;border-top:1px solid #eee;}
+}
+
+ /* Make sure no black boxes sneak in */
+.navbar-header{background:transparent!important;}
