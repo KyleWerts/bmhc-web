@@ -16,6 +16,84 @@ body { font-family: "Helvetica Neue", Arial, sans-serif; }
 .logo{ height:40px; }
 .affiliates img{ vertical-align:middle; }
 
+/* Styling for the page header banner */
+.page-header-banner {
+    background-color: #f7f7f7; /* Light gray background */
+    padding: 60px 0; /* Add top and bottom padding */
+    margin-bottom: 30px; /* Space below the banner */
+    text-align: center;
+}
+
+/* Header text styles */
+.page-header-banner h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 2px;
+    font-size: 4em;
+    margin: 0;
+    color: #333;
+}
+
+/* Styling for the about paragraph section */
+.about-paragraph-section {
+    background-color: #ffffff; /* Same as your header banner for a clean look */
+    padding: 30px 0;
+    margin-bottom: 30px;
+}
+
+.about-paragraph-section p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    font-family: Arial, sans-serif; /* A clean, readable font for the body text */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .page-header-banner h1 {
+        font-size: 2.5em;
+    }
+}
+
+/* Styling for the main content area */
+.main-content-cards {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+/* Card link styles */
+.card-link {
+    display: block;
+    text-decoration: none !important; /* Removes underline from the link */
+    margin-bottom: 20px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* Card container styles */
+.card-link .panel {
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Hover effect for the cards */
+.card-link:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Icon styles */
+.card-link .panel-body i {
+    color: #C0B561; /* Matches your brand's orange color */
+    margin-bottom: 15px;
+}
+
+/* Text styles */
+.card-link .panel-body h4 {
+    color: #333; /* Dark text color for readability */
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 1px;
+}
+
 /* HERO */
 .hero{ position:relative; background-size:cover; background-position:center top; }
 .hero.hero-lg{ min-height:60vh; display:flex; align-items:center; justify-content:center; }
