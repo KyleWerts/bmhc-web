@@ -1,205 +1,193 @@
-:root { --navy:#000000; }
-body { font-family: "Helvetica Neue", Arial, sans-serif; }
-.navbar-header a, .navbar-nav>li>a { color:#ffffff; }
-.navbar-header { background:#ffffff; }
-.navbar-header h2, .navbar-middle h4 a { color:#C0B561; text-decoration:none; }
-.navbar-middle { background:var(--navy); color:#fff; padding:8px 0; }
-.navbar-middle h4 { color:#fff; margin:8px 0; }
-.navbar-middle .affiliate { height:28px; margin-left:10px; filter:grayscale(100%) brightness(100%); }
-@media (max-width:1024px){
-  .navbar-header .btn { color:#C0B561 !important; }
-  .navbar-collapse { background:var(--navy); color:#fff; border:none; }
-  .navbar-nav>li>a { color:#fff; }
-}
-.yamm .dropdown-menu{ padding:20px 25px; }
-.yamm .inner h4{ margin-top:0; }
-.logo{ height:40px; }
-.affiliates img{ vertical-align:middle; }
+:root { --navy:#000000; /* brand black */ }
 
-/* Styling for the page header banner */
-.page-header-banner {
-    background-color: #f7f7f7; /* Light gray background */
-    padding: 60px 0; /* Add top and bottom padding */
-    margin-bottom: 30px; /* Space below the banner */
-    text-align: center;
-}
+html, body { height:100%; }
+body { font-family:"Helvetica Neue", Arial, sans-serif; color:#111; background:#fff; }
+a { color:inherit; }
 
-/* Header text styles */
-.page-header-banner h1 {
-    font-family: 'Bebas Neue', sans-serif;
-    letter-spacing: 2px;
-    font-size: 4em;
-    margin: 0;
-    color: #333;
-}
+/* Safety: if there's an extra wrapper <div class="navbar"> inside <header>, don't style it like a navbar */
+header > .navbar { background:transparent; border:0; box-shadow:none; }
 
-/* Styling for the about paragraph section */
-.about-paragraph-section {
-    background-color: #ffffff; /* Same as your header banner for a clean look */
-    padding: 30px 0;
-    margin-bottom: 30px;
+/* ---------- Navbar (minimal, connected tab style) ---------- */
+.navbar-bmhc{
+  background:#fff;
+  border-bottom:1px solid #ddd;
+  box-shadow:0 1px 0 rgba(0,0,0,.04);
 }
+.navbar-bmhc .navbar-brand{ padding:10px 15px; }
+.navbar-bmhc .navbar-brand img{ height:40px; width:auto; display:block; }
+.navbar-header{ background:transparent !important; }
 
-.about-paragraph-section p {
-    font-size: 1.2em;
-    line-height: 1.6;
-    font-family: Arial, sans-serif; /* A clean, readable font for the body text */
+.navbar-bmhc .nav>li>a{
+  color:#111; font-weight:700; letter-spacing:.02em; text-transform:uppercase;
+  padding:22px 16px; position:relative; transition:background .15s;
 }
+.navbar-bmhc .nav>li>a:hover{ background:#f8f8f9; color:#000; }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .page-header-banner h1 {
-        font-size: 2.5em;
-    }
+/* Gold underline on hover */
+.navbar-bmhc .nav>li>a:after{
+  content:""; position:absolute; left:0; right:0; bottom:-1px; height:4px;
+  background:transparent; transition:background .15s;
+}
+.navbar-bmhc .nav>li>a:hover:after{ background:#C0B561; }
+
+/* When a dropdown is OPEN: pill tab that blends into panel */
+.navbar-bmhc .nav>li.open>a,
+.navbar-bmhc .nav>li.open>a:focus,
+.navbar-bmhc .nav>li.open>a:hover{
+  background:#fff; color:#000; z-index:1002;
+  border:1px solid #e6e6e6; border-bottom-color:transparent;
+  border-top-left-radius:12px; border-top-right-radius:12px;
+}
+.navbar-bmhc .nav>li.open>a:after{ background:transparent; }
+
+/* Mega panel attached to the tab */
+.navbar-bmhc .dropdown-menu.megapanel{
+  margin-top:-1px; /* tuck under the tab border */
+  border:1px solid #e6e6e6; border-radius:12px;
+  border-top-left-radius:0; border-top-right-radius:0; /* tab supplies top corners */
+  box-shadow:0 12px 30px rgba(0,0,0,.12);
+  padding:0; min-width:720px; /* comfortable for 2–3 columns */
 }
 
-/* Styling for the main content area */
-.main-content-cards {
-    padding-top: 40px;
-    padding-bottom: 40px;
+/* YAMM inner content */
+.yamm .yamm-content{ padding:20px 24px; }
+.yamm .yamm-content h5{ margin:6px 0 10px; font-weight:700; color:#111; }
+.yamm .yamm-content ul{ margin:0; padding:0; list-style:none; }
+.yamm .yamm-content li a{ display:block; padding:6px 0; color:#333; text-decoration:none; }
+.yamm .yamm-content li a:hover{ color:#000; text-decoration:underline; }
+
+/* Optional: single long list variant (use class="dropdown-menu dropdown-long") */
+.navbar-bmhc .dropdown-menu.dropdown-long{
+  min-width:320px; max-height:70vh; overflow:auto; padding:8px 0;
+  margin-top:-1px; border:1px solid #e6e6e6; border-radius:12px;
+  border-top-left-radius:0; border-top-right-radius:0; box-shadow:0 12px 30px rgba(0,0,0,.12);
+}
+.navbar-bmhc .dropdown-menu>li>a{ padding:8px 16px; white-space:normal; }
+
+/* Mobile tweaks */
+@media (max-width:991px){
+  .navbar-bmhc .nav>li.open>a{ border:0; border-radius:0; }
+  .navbar-bmhc .dropdown-menu.megapanel,
+  .navbar-bmhc .dropdown-menu.dropdown-long{
+    position:static; float:none; width:auto; min-width:0; margin:0; border-radius:0; box-shadow:none;
+    border:0; border-top:1px solid #eee;
+  }
 }
 
-/* Card link styles */
-.card-link {
-    display: block;
-    text-decoration: none !important; /* Removes underline from the link */
-    margin-bottom: 20px;
-    transition: transform 0.2s, box-shadow 0.2s;
-}
-
-/* Card container styles */
-.card-link .panel {
-    text-align: center;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-}
-
-/* Hover effect for the cards */
-.card-link:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Icon styles */
-.card-link .panel-body i {
-    color: #C0B561; /* Matches your brand's orange color */
-    margin-bottom: 15px;
-}
-
-/* Text styles */
-.card-link .panel-body h4 {
-    color: #333; /* Dark text color for readability */
-    font-family: 'Bebas Neue', sans-serif;
-    letter-spacing: 1px;
-}
-
-/* HERO */
+/* ---------- Hero ---------- */
 .hero{ position:relative; background-size:cover; background-position:center top; }
 .hero.hero-lg{ min-height:60vh; display:flex; align-items:center; justify-content:center; }
 .overlay-25::before{ content:""; position:absolute; inset:0; background:rgba(0,0,0,.25); }
 .hero_content{ position:relative; z-index:2; text-align:center; color:#fff; }
-.hero_header{ font-family:"Bebas Neue", system-ui, sans-serif; font-size:68px; letter-spacing:.5px; margin:0; }
+.hero_header{
+  font-family:"Bebas Neue", system-ui, sans-serif;
+  font-size:68px; letter-spacing:.5px; margin:0;
+}
 .hero_subheader{ margin:8px 0 16px; font-weight:400; }
-.btn-hero{ background:#fff; color:var(--navy)!important; border-radius:3px; }
+.btn-hero{ background:#fff; color:var(--navy) !important; border-radius:3px; }
 
-/* EVENTS STRIP */
-#home-events{ background:var(--navy); color:#fff; display:flex; gap:24px; align-items:center; padding:12px 16px; font-weight:500; flex-wrap:wrap; }
+/* ---------- Events strip ---------- */
+#home-events{
+  background:var(--navy); color:#fff; display:flex; gap:24px; align-items:center;
+  padding:12px 16px; font-weight:500; flex-wrap:wrap;
+}
 #home-events i{ margin-right:6px; }
 
-/* SCHEDULE TILES */
+/* ---------- Schedule tiles ---------- */
 #home-scores{ display:flex; gap:12px; overflow:auto; padding:16px; background:#f7f8fb; }
 .scorebox{ background:#fff; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,.08); min-width:260px; }
 .scorebox table{ width:100%; }
-.scorebox .status td{ background:#eef1ff; color:#243; font-weight:600; padding:8px 10px; border-top-left-radius:8px; border-top-right-radius:8px; }
+.scorebox .status td{
+  background:#eef1ff; color:#243; font-weight:600; padding:8px 10px;
+  border-top-left-radius:8px; border-top-right-radius:8px;
+}
 .scorebox .team td, .scorebox .location td{ padding:8px 10px; }
 
-/* SPONSORS */
+/* ---------- Sponsors ---------- */
 #sponsor-wrapper{ background:#fff; padding:50px 0; }
 .sponsor-single{ line-height:100px; margin-bottom:16px; }
 .sponsor-single img{ max-width:100%; max-height:100px; }
 
-/* SOCIAL */
+/* ---------- Social ---------- */
 #home-social-media{ background:var(--navy); color:#fff; text-align:center; padding:30px 0; }
 #home-social-media h2{ color:#fff; margin:0 0 10px; }
 #home-social-media a{ color:#fff; font-size:28px; }
 #home-social-media a:hover{ color:rgba(255,255,255,.6); }
 
-/* FOOTER */
+/* ---------- Footer ---------- */
 footer.dark-bg .inner{ padding:30px 0; }
 .footer-bottom{ border-top:1px solid #e5e7eb; padding:12px 0; }
 .footer-menu{ list-style:none; margin:0; padding:0; }
 .footer-menu>li{ display:inline-block; margin-left:12px; }
 .footer-menu a{ color:#222; text-decoration:none; }
 .footer-menu a:hover{ text-decoration:underline; }
+.logo{ height:40px; }
 
-
-
-/* White nav with black text */
-.navbar-default { background:#fff; border-color:#e6e6e6; }
-.navbar-default .navbar-brand,
-.navbar-default .navbar-nav>li>a { color:#111; font-weight:600; }
-.navbar-default .navbar-nav>li>a:hover,
-.navbar-default .navbar-brand:hover { color:#000; background:transparent; }
-.navbar { border-radius:0; }
-
-/* Dropdown look */
-.dropdown-menu { border-radius:10px; }
-
-/* Utility bar text link */
-.navbar-middle a.middle-brand:hover { text-decoration:underline; }
-
-
-/* Static white nav like Lakes */
-.bmhc-nav { background:#fff !important; border-bottom:1px solid #ddd; box-shadow:0 1px 0 rgba(0,0,0,.04); }
-.bmhc-nav .navbar-brand { padding:10px 15px; background:transparent !important; }
-.bmhc-nav .navbar-brand img { height:38px; width:auto; display:block; }
-.bmhc-nav .navbar-nav>li>a { color:#222; font-weight:600; padding:22px 15px; }
-.bmhc-nav .navbar-nav>li>a:hover,
-.bmhc-nav .navbar-nav>.open>a,
-.bmhc-nav .navbar-nav>.open>a:focus,
-.bmhc-nav .navbar-nav>.open>a:hover { color:#000; background:transparent; }
-.bmhc-nav .dropdown-menu { border-radius:10px; }
-
-/* Kill any previous "transparent/sticky" navbar overrides */
-header .navbar,
-header .navbar-default { background:#fff !important; position:static; }
-
-
-/* ===== BMHC Navbar (Bootstrap 3 + YAMM) ===== */
-.navbar-bmhc {background:#fff;border-bottom:1px solid #ddd;box-shadow:0 1px 0 rgba(0,0,0,.04);}
-.navbar-bmhc .navbar-brand {padding:10px 15px;}
-.navbar-bmhc .navbar-brand img{height:40px;width:auto;display:block;}
-
-.navbar-bmhc .nav>li>a{
-  color:#111;font-weight:700;letter-spacing:.02em;
-  padding:22px 16px;position:relative;transition:background .15s ease;
+/* ---------- About page header + paragraph ---------- */
+.page-header-banner{
+  background-color:#f7f7f7; padding:60px 0; margin-bottom:30px; text-align:center;
 }
-.navbar-bmhc .nav>li>a:hover,
-.navbar-bmhc .nav>li.open>a{background:#f8f8f9;color:#000;}
-
- /* “tab” underline on hover/open */
-.navbar-bmhc .nav>li>a:after{
-  content:"";position:absolute;left:0;right:0;bottom:-1px;height:4px;
-  background:transparent;transition:background .15s ease;
+.page-header-banner h1{
+  font-family:"Bebas Neue", sans-serif; letter-spacing:2px; font-size:4em; margin:0; color:#333;
 }
-.navbar-bmhc .nav>li>a:hover:after,
-.navbar-bmhc .nav>li.open>a:after,
-.navbar-bmhc .nav>li.active>a:after{background:#C0B561;} /* gold */
+.about-paragraph-section{ background-color:#fff; padding:30px 0; margin-bottom:30px; }
+.about-paragraph-section p{ font-size:1.2em; line-height:1.6; }
 
- /* YAMM mega menu panel */
-.yamm .dropdown-menu{border:1px solid #e6e6e6;border-radius:12px;padding:0;margin-top:-1px;}
-.yamm .yamm-content{padding:20px 24px;}
-.yamm .yamm-content h5{margin:6px 0 10px;font-weight:700;color:#111;}
-.yamm .yamm-content ul{margin:0;padding:0;list-style:none;}
-.yamm .yamm-content li a{display:block;padding:6px 0;color:#333;text-decoration:none;}
-.yamm .yamm-content li a:hover{color:#000;text-decoration:underline;}
-
- /* Mobile collapses to stacked links */
-@media (max-width: 991px){
-  .yamm .dropdown-menu{position:static;float:none;width:auto;box-shadow:none;border:0;border-radius:0;margin:0;}
-  .yamm .yamm-content{padding:10px 15px;border-top:1px solid #eee;}
+@media (max-width:768px){
+  .page-header-banner h1{ font-size:2.5em; }
 }
 
- /* Make sure no black boxes sneak in */
-.navbar-header{background:transparent!important;}
+/* ---------- About page cards ---------- */
+.main-content-cards{ padding-top:40px; padding-bottom:40px; }
+.card-link{ display:block; text-decoration:none !important; margin-bottom:20px; transition:transform .2s, box-shadow .2s; }
+.card-link .panel{
+  text-align:center; border:1px solid #ddd; border-radius:8px; box-shadow:0 2px 4px rgba(0,0,0,.05);
+}
+.card-link:hover{ transform:translateY(-5px); box-shadow:0 4px 10px rgba(0,0,0,.1); }
+.card-link .panel-body i{ color:#C0B561; margin-bottom:15px; }
+.card-link .panel-body h4{
+  color:#333; font-family:"Bebas Neue", sans-serif; letter-spacing:1px;
+}
+
+/* ===== Board of Directors ===== */
+
+/* container padding helper (optional) */
+.inner-sm{padding:30px 0}
+
+/* Left side nav */
+.side-nav{background:#fff;border:1px solid #eee;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,.04);padding:8px 0;position:sticky;top:90px}
+.side-nav ul{list-style:none;margin:0;padding:0}
+.side-nav li+li{border-top:1px solid #f0f0f0}
+.side-nav a{display:block;padding:12px 16px;color:#1a1a1a;text-decoration:none;font-weight:700;letter-spacing:.02em}
+.side-nav a:hover{background:#f7f7fb}
+.side-nav .active>a{background:#f7f7fb;border-left:4px solid #C0B561;padding-left:12px}
+
+/* Heading w/ divider */
+.page-title{font-family:"Bebas Neue",system-ui,sans-serif;font-size:46px;letter-spacing:.5px;margin:0 0 14px}
+.section-divider{height:2px;background:#111;opacity:.2;margin:10px 0 24px;border:0}
+
+/* Grid cards */
+.board-grid{margin-top:10px}
+.board-card{margin-bottom:36px;text-align:center}
+.board-card .avatar{
+  width:260px;height:260px;border-radius:50%;
+  background:#e9ecf2;object-fit:contain;object-position:center;
+  border:8px solid #fff;box-shadow:0 6px 18px rgba(0,0,0,.08);display:block;margin:0 auto 14px
+}
+/* small helper sizes if you need them later */
+.avatar-lg{width:220px;height:220px}.avatar-xl{width:300px;height:300px}
+
+.board-card h4{font-family:"Bebas Neue",system-ui,sans-serif;letter-spacing:.5px;margin:6px 0 4px;font-size:22px}
+.board-card p{margin:0 0 4px;color:#444}
+.board-card .muted{color:#6b6b6b;font-size:13px}
+.board-card .ico{display:inline-block;margin-top:6px;color:#111;text-decoration:none}
+.board-card .ico:hover{color:#000}
+
+/* Responsive: 2-up on md, 1-up on xs automatically via Bootstrap grid */
+@media (max-width:991px){
+  .side-nav{position:static;margin-bottom:18px}
+  .board-card .avatar{width:220px;height:220px}
+}
+@media (max-width:480px){
+  .board-card .avatar{width:180px;height:180px}
+}
