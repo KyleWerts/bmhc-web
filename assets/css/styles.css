@@ -191,3 +191,54 @@ footer.dark-bg .inner{ padding:30px 0; }
 @media (max-width:480px){
   .board-card .avatar{width:180px;height:180px}
 }
+
+/* Styles for the main content sections (Mission, Vision, Values) */
+.styled-section {
+    padding: 25px 0;
+    border-bottom: 1px solid #eee; /* Light divider line between sections */
+}
+
+.styled-section:last-child {
+    border-bottom: none; /* Remove divider on the last section */
+}
+
+.styled-heading {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2em; /* 28px or 2em is a good size */
+    margin-top: 0;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+    color: #333;
+}
+
+/* Styles for the paragraph text */
+.styled-section p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #555;
+    font-family: Arial, sans-serif; /* A clean, readable font */
+    margin-bottom: 20px;
+}
+
+/* List styles for the values section */
+.styled-section ul {
+    list-style-type: none; /* Remove bullet points */
+    padding-left: 0;
+}
+
+.styled-section ul li {
+    background-color: #f7f7f7; /* Light background for each list item */
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border-left: 5px solid #C0B561; /* Brand-colored left border */
+}
+
+.styled-section ul li strong {
+    font-size: 1.1em;
+    color: #333;
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 0.5px;
+    display: block;
+    margin-bottom: 5px;
+}
