@@ -242,3 +242,28 @@ footer.dark-bg .inner{ padding:30px 0; }
     display: block;
     margin-bottom: 5px;
 }
+/* New class to center the icon */
+.text-center-container {
+  text-align: center;
+}
+
+/* Style for the card headings */
+.card-link .panel-body h4 {
+  text-align: center; /* Aligns heading to the left */
+  margin-top: 15px; /* Adds space above the heading */
+}
+
+/* Style for the list items */
+.card-link .panel-body ul {
+  text-align: left; /* Aligns the list to the left */
+  padding-left: 20px; /* Adds indent for the bullet points */
+}
+.button-container {
+    text-align: center;
+    margin-top: 20px; /* Adds space between the list and the button */
+}
+/* Center the image and add margin */
+.text-center-image {
+    text-align: center;
+    margin: 20px 0;
+}
