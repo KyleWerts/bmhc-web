@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BMHC — About</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+  <!-- CSS libs (Bootstrap 3 + Jasny + Yamm + FontAwesome) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jasny-bootstrap@3.1.3/dist/css/jasny-bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/geedmo/yamm3/yamm/yamm.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+<div id="site-header"></div>
+
+
+<section class="light-bg">
+    <div class="container inner-sm">
+      <div class="row show-overflow">
+
+      <!-- LEFT: About nav -->
+     <div id="about-nav" class="hidden-xs hidden-sm col-md-3" data-active="mission"></div>
+
+      <!-- RIGHT: Page body -->
+<div class="col-md-9">
+  <h1 class="page-title">Organizational Charts</h1>
+  <hr class="section-divider">
+
+<section class="styled-section">
+    <div class="text-center-image">
+      <img src="" alt="BMHC Organizational Chart" width="1024" height="760">
+    </div>
+  </section>
+
+</div>
+<!-- JS libs -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-hover-dropdown/2.2.1/bootstrap-hover-dropdown.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jasny-bootstrap@3.1.3/dist/js/jasny-bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/geedmo/yamm3/yamm/yamm.min.js"></script>
+
+  <!-- Your partial loader (include ONCE) -->
+  <script src="/assets/js/partials.js"></script>
+  <script>
+    // load header + about nav
+    loadNavbar('#site-header');
+    loadAboutNav('#about-nav'); // looks for /assets/partials/leftnav.html
+  </script>
