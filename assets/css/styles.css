@@ -242,3 +242,76 @@ footer.dark-bg .inner{ padding:30px 0; }
     display: block;
     margin-bottom: 5px;
 }
+/* New class to center the icon */
+.text-center-container {
+  text-align: center;
+}
+
+/* Style for the card headings */
+.card-link .panel-body h4 {
+  text-align: center; /* Aligns heading to the left */
+  margin-top: 15px; /* Adds space above the heading */
+}
+
+/* Style for the list items */
+.card-link .panel-body ul {
+  text-align: left; /* Aligns the list to the left */
+  padding-left: 20px; /* Adds indent for the bullet points */
+}
+.button-container {
+    text-align: center;
+    margin-top: 20px; /* Adds space between the list and the button */
+}
+/* Center the image and add margin */
+.text-center-image {
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* ===== Shared layout (Agendas & Minutes) ===== */
+
+/* Section heading line + tag */
+.year-divider{
+  position:relative;
+  display:flex; align-items:center; gap:14px;
+  margin:28px 0 18px;
+  font-family:"Bebas Neue", Impact, sans-serif;
+  letter-spacing:.5px;
+}
+.year-divider .year{ font-size:40px; line-height:1; }      /* YEAR size */
+.year-divider .tag{
+  font-size:1em;                 /* << same size as the year */
+  line-height:.9;
+  padding:.12rem .55rem;
+  border-radius:.4rem;
+  background:var(--tag-bg, #a7e0dc);  /* default teal */
+  font-style:normal;
+}
+.year-divider .tag::before{ content:var(--tag); }
+
+/* thin rules left/right of the group; keeps your look */
+.year-divider::before,
+.year-divider::after{
+  content:"";
+  height:2px; background:#111; flex:1 1 auto;
+}
+.year-divider::before{ margin-right:8px; }
+.year-divider::after{ margin-left:8px; }
+
+/* pill-style doc links */
+.doc-list{ list-style:none; padding:0; margin:0; }
+.doc-list li{ margin-bottom:14px; }
+.doc-pill{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:12px 16px; border-radius:999px;
+  background:#f3f3f6; text-decoration:none;
+  text-transform:uppercase; font-weight:700; letter-spacing:.02em;
+  transition:background .15s ease, transform .05s ease;
+}
+.doc-pill:hover{ background:#ececf2; text-decoration:none; }
+.doc-pill .left{ display:flex; align-items:center; gap:10px; }
+.doc-pill i{ opacity:.9; }
+.doc-pill .fa-download{ opacity:.6; }
+
+/* (Could be deleted) different tag colors by page type */
+.doc-page[data-kind="minutes"]{ --tag-bg:#cfe3ff; } /* soft blue */
