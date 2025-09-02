@@ -87,9 +87,17 @@
     if (li) li.classList.add('active');
   }
 
+  // Footer Partial
+function loadFooter(targetSelector) {
+  var url = '/assets/partials/footer.html';
+  var fallbacks = [url, relativeFromRoot(url), 'assets/partials/footer.html'];
+  return tryUrls(targetSelector, fallbacks);
+}
+
   // expose
   w.loadPartial     = loadPartial;
   w.loadNavbar      = loadNavbar;
+  w.loadFooter      = loadFooter;
   w.loadAboutNav    = loadAboutNav;
   w.markActiveTop   = markActiveTop;
   w.markActiveAbout = markActiveAbout;

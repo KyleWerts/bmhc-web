@@ -315,3 +315,73 @@ footer.dark-bg .inner{ padding:30px 0; }
 
 /* (Could be deleted) different tag colors by page type */
 .doc-page[data-kind="minutes"]{ --tag-bg:#cfe3ff; } /* soft blue */
+
+/* Start FOOTER CSS */
+
+/* Footer container */
+.site-footer.dark-bg {
+  background: #1a1930;            /* team-dark; tweak to taste */
+  color: #fff;
+  margin-top: 56px;               /* space from page body */
+}
+.site-footer.dark-bg a { color: #fff; opacity: .9; }
+.site-footer.dark-bg a:hover { opacity: 1; text-decoration: none; }
+
+/* Top area */
+.site-footer .inner { padding: 48px 0 36px; }
+.site-footer h4 {
+  font-family: "Bebas Neue", Impact, sans-serif;
+  letter-spacing: .6px;
+  margin: 0 0 10px;
+}
+
+/* Grid balance + alignment */
+.footer-grid { align-items: flex-start; }
+@media (min-width: 992px) {
+  .footer-grid > [class*="col-"] {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* Logo block */
+.site-footer .footer-brand { display: inline-flex; align-items: center; justify-content: center; }
+.site-footer .logo { max-width: 120px; height: auto; filter: drop-shadow(0 1px 0 rgba(0,0,0,.35)); }
+@media (max-width: 767px) {
+  .site-footer .logo { margin-bottom: 10px; }
+}
+
+/* Socials + button */
+.site-footer .footer-social { margin: 6px 0 12px; padding: 0; list-style: none; }
+.site-footer .footer-social li { display: inline-block; margin-right: 10px; }
+.site-footer .footer-social a {
+  display: inline-flex; width: 36px; height: 36px; border-radius: 50%;
+  align-items: center; justify-content: center;
+  border: 1px solid rgba(255,255,255,.35);
+}
+.site-footer .btn.btn-outline.light {
+  border: 1px solid rgba(255,255,255,.6);
+  color: #fff;
+  padding: 6px 10px;
+}
+.site-footer .tagline {
+  margin-top: 12px;
+  font-family: "Bebas Neue", Impact, sans-serif;
+  letter-spacing: .8px; opacity: .75;
+}
+
+/* Bottom strip */
+.footer-bottom {
+  background: rgba(255,255,255,.06);
+  border-top: 1px solid rgba(255,255,255,.12);
+  padding: 12px 0;
+}
+.footer-bottom .footer-menu { list-style: none; margin: 0; padding: 0; }
+.footer-bottom .footer-menu li { display: inline-block; margin-left: 16px; }
+.footer-bottom .footer-menu a { color: #fff; opacity: .85; }
+@media (max-width: 767px) {
+  .footer-bottom .container.inner { text-align: center; }
+  .footer-bottom .footer-menu { margin-top: 8px; }
+}
+
+ /* END FOOTER CSS */
