@@ -1,6 +1,8 @@
 :root { --navy:#000000; /* brand black */ }
 
-html, body { height:100%; }
+html, body { height:100%; 
+  margin: 0;
+  padding: 0;}
 body { font-family:"Helvetica Neue", Arial, sans-serif; color:#111; background:#fff; }
 a { color:inherit; }
 
@@ -315,3 +317,188 @@ footer.dark-bg .inner{ padding:30px 0; }
 
 /* (Could be deleted) different tag colors by page type */
 .doc-page[data-kind="minutes"]{ --tag-bg:#cfe3ff; } /* soft blue */
+
+/* Start FOOTER CSS */
+
+/* Footer container */
+.site-footer.dark-bg {
+  background: #1a1930;            /* team-dark; tweak to taste */
+  color: #fff;
+  margin-top: 56px;               /* space from page body */
+}
+.site-footer.dark-bg a { color: #fff; opacity: .9; }
+.site-footer.dark-bg a:hover { opacity: 1; text-decoration: none; }
+
+/* Top area */
+.site-footer .inner { padding: 48px 0 36px; }
+.site-footer h4 {
+  font-family: "Bebas Neue", Impact, sans-serif;
+  letter-spacing: .6px;
+  margin: 0 0 10px;
+}
+
+/* Grid balance + alignment */
+.footer-grid { align-items: flex-start; }
+@media (min-width: 992px) {
+  .footer-grid > [class*="col-"] {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* Logo block */
+.site-footer .footer-brand { display: inline-flex; align-items: center; justify-content: center; }
+.site-footer .logo { max-width: 120px; height: auto; filter: drop-shadow(0 1px 0 rgba(0,0,0,.35)); }
+@media (max-width: 767px) {
+  .site-footer .logo { margin-bottom: 10px; }
+}
+
+/* Socials + button */
+.site-footer .footer-social { margin: 6px 0 12px; padding: 0; list-style: none; }
+.site-footer .footer-social li { display: inline-block; margin-right: 10px; }
+.site-footer .footer-social a {
+  display: inline-flex; width: 36px; height: 36px; border-radius: 50%;
+  align-items: center; justify-content: center;
+  border: 1px solid rgba(255,255,255,.35);
+}
+.site-footer .btn.btn-outline.light {
+  border: 1px solid rgba(255,255,255,.6);
+  color: #fff;
+  padding: 6px 10px;
+}
+.site-footer .tagline {
+  margin-top: 12px;
+  font-family: "Bebas Neue", Impact, sans-serif;
+  letter-spacing: .8px; opacity: .75;
+}
+
+/* Bottom strip */
+.footer-bottom {
+  background: rgba(255,255,255,.06);
+  border-top: 1px solid rgba(255,255,255,.12);
+  padding: 12px 0;
+}
+.footer-bottom .footer-menu { list-style: none; margin: 0; padding: 0; }
+.footer-bottom .footer-menu li { display: inline-block; margin-left: 16px; }
+.footer-bottom .footer-menu a { color: #fff; opacity: .85; }
+@media (max-width: 767px) {
+  .footer-bottom .container.inner { text-align: center; }
+  .footer-bottom .footer-menu { margin-top: 8px; }
+}
+.site-wrapper {
+  display: flex; 
+  flex-direction: column; 
+  min-height: 100vh; 
+}
+main {
+  flex: 1; 
+}
+ /* END FOOTER CSS */
+
+
+/* ============= BMHC CALENDAR ============= */
+
+.calendar-wrap{
+  --gutter: clamp(12px, 3vw, 48px);
+  --col-min: clamp(300px, 30vw, 420px);      
+  --card-max: clamp(480px, 42vw, 640px);    
+}
+
+.week-nav{
+  max-width: 1200px;
+  margin: 12px auto 8px auto;
+  display: grid;
+  grid-template-columns: auto 1fr auto;    
+  align-items: center;
+  column-gap: 12px;
+}
+.wkbtn-group{ display:inline-flex; gap:10px; }
+.wkbtn{
+  padding: 6px 12px;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  border-radius: 9999px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.wkbtn:hover{ background:#f1f5f9; }
+.wklabel{
+  justify-self: end;
+  font-weight: 800; color:#111;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+
+#home-scores{
+  width: 100vw;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  background: #f5f7fa;
+
+  display: flex !important;
+  flex-wrap: nowrap;
+  gap: 24px;
+  padding: 22px var(--gutter) 28px var(--gutter);
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  -webkit-overflow-scrolling: touch;
+}
+
+#home-scores::before,
+#home-scores::after{
+  content: '';
+  flex: 0 0 max((100vw - 1200px)/2 - var(--gutter), 0px);
+}
+
+.day-col{
+  flex: 0 0 var(--col-min);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: flex-start;
+  scroll-snap-align: start;
+}
+.day-heading{ font-weight: 800; color:#111; margin: 2px 0 0; }
+
+#home-scores .scorebox{
+  width: min(100%, var(--card-max));
+  background:#fff;
+  border-radius: 14px;
+  box-shadow: 0 1px 2px rgba(0,0,0,.06), 0 6px 16px rgba(0,0,0,.05);
+
+
+  padding: 16px 18px;
+  min-height: 100px;
+
+  border-left: 5px solid #e5e7eb; 
+  display: block;
+}
+#home-scores .when{  font-weight:800; font-size:.95rem; color:#111; }
+#home-scores .title{ line-height:1.25; font-weight:700; color:#1f2937; margin-top:4px; }
+#home-scores .rink{  margin-top:6px; color:#1f2937; font-size:.95rem; font-weight:700; }
+
+.tag{ display:inline-block; padding:2px 7px; border-radius:9999px; font-size:.72rem; margin-right:6px; }
+.tag.tag-htfl{        background:#2d6cdf; color:#fff; }
+.tag.tag-htfl2{       background:#22a06b; color:#fff; }
+.tag.tag-pickup{      background:#6b7280; color:#fff; }
+.tag.tag-ltp{         background:#f1c232; color:#111; }
+.tag.tag-tournament{  background:#d43f3a; color:#fff; }
+.tag.tag-board{       background:#111;    color:#fff; }
+.tag.tag-default{     background:#e5e7eb; color:#111; }
+
+#home-scores .scorebox.tag-htfl{        border-left-color:#2d6cdf !important; }
+#home-scores .scorebox.tag-htfl2{       border-left-color:#22a06b !important; }
+#home-scores .scorebox.tag-pickup{      border-left-color:#6b7280 !important; }
+#home-scores .scorebox.tag-ltp{         border-left-color:#f1c232 !important; }
+#home-scores .scorebox.tag-tournament{  border-left-color:#d43f3a !important; }
+#home-scores .scorebox.tag-board{       border-left-color:#111    !important; }
+
+.week-empty{
+  background:#fff; border:1px dashed #e5e7eb; border-radius:14px;
+  padding:18px; text-align:center; color:#374151; font-weight:700;
+  min-width: var(--col-min);
+}
+
+@media (max-width: 640px){
+  .wklabel{ display:none; }
+}
+/* ============= BMHC CALENDAR END ============= */

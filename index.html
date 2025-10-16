@@ -26,7 +26,11 @@
 <div id="site-header"></div>
 
 <script src="/assets/js/partials.js"></script>
-<script> loadNavbar('#site-header'); </script>
+<script> 
+  loadNavbar('#site-header');
+  loadFooter('#site-footer');
+</script>
+
 
 <main>
   <section class="light-bg">
@@ -36,40 +40,22 @@
       <div class="hero_content">
         <h1 class="hero_header">Black Magic Hockey Club</h1>
         <h2 class="hero_subheader">Adult Hockey</h2>
-        <a href="#" class="hero_button btn btn-large btn-hero">Click Here to Get Started</a>
+        <!--<a href="#" class="hero_button btn btn-large btn-hero">Click Here to Get Started</a>-->
       </div>
     </div>
 
     <!-- EVENTS STRIP -->
     <div id="home-events" class="with-hero">
-      <span><strong>BMHC Board Meeting</strong></span>
-      <span><i class="fa-regular fa-calendar"></i> August 20, 2025 - 6:00pm to 8:00pm</span>
-      <span><i class="fa-solid fa-location-dot"></i> The Clubhouse </span>
+      <span><strong id="strip-title">BMHC Board Meeting</strong></span>
+      <span class="fa-regular fa-calendar"></span><span id="strip-when"></span>
+      <span class="fa-solid fa-location-dot"></span><span id="strip-where"></span>
     </div>
 
     <!-- SCHEDULE CARDS -->
-    <div id="home-scores">
-      <div class="home-scores"><div class="scorebox"><table>
-        <tr class="status"><td colspan="100%">10/25 - 2:00pm</td></tr>
-        <tr class="team"><td>Dubuque Saints - JV</td><td class="score"></td></tr>
-        <tr class="team"><td><a href="#">High School (19U)</a></td><td class="score"></td></tr>
-        <tr class="location"><td colspan="100%">Lakes Arena Rink</td></tr>
-      </table></div></div>
-
-      <div class="home-scores"><div class="scorebox"><table>
-        <tr class="status"><td colspan="100%">10/25 - 4:00pm</td></tr>
-        <tr class="team"><td>Dubuque Saints - Varsity</td><td class="score"></td></tr>
-        <tr class="team"><td><a href="#">High School (19U)</a></td><td class="score"></td></tr>
-        <tr class="location"><td colspan="100%">Lakes Arena Rink</td></tr>
-      </table></div></div>
-
-      <div class="home-scores"><div class="scorebox"><table>
-        <tr class="status"><td colspan="100%">11/1 - 2:00pm</td></tr>
-        <tr class="team"><td>Blue vs Green</td><td class="score"></td></tr>
-        <tr class="team"><td><a href="#">High School (19U)</a></td><td class="score"></td></tr>
-        <tr class="location"><td colspan="100%">Lakes Arena Rink</td></tr>
-      </table></div></div>
-    </div>
+    <section class="calendar-wrap">
+      <div id="home-scores-nav" class="week-nav"></div>
+      <div id="home-scores"></div>
+    </section>
 
     <!-- SPONSORS -->
     <div id="sponsor-wrapper">
@@ -82,50 +68,12 @@
         </div>
       </div>
     </div>
-
-    <!-- SOCIAL -->
-    <div id="home-social-media">
-      <div class="container">
-        <h2>Follow Black Magic Hockey Club</h2>
-        <div id="social-media-icons">
-          <a href="#" target="_blank"><i class="icon-s-instagram fab fa-instagram"></i></a>
-        </div>
-      </div>
-    </div>
   </section>
 </main>
 
-<footer class="dark-bg bottom hidden-print">
-  <div class="container inner">
-    <div class="row">
-      <div class="col-md-3 col-sm-6 inner hide_on_mobile text-center">
-        <a href="/"><img src="assets/img/logo.svg" class="logo" alt=""></a>
-      </div>
-      <div class="col-md-3 col-sm-6 inner">
-        <h4 class="mb0">About Us</h4>
-        <p>Black Magic Hockey Club (BMHC) promotes the growth of Adult hockey and a positive experience for all participants.</p>
-      </div>
-      <div class="col-md-3 col-sm-6 inner">
-        <h4 class="mb0">Contact</h4>
-        <p>PO Box 10<br>Spirit Lake, IA 51360</p>
-      </div>
-      <div class="col-md-3 col-sm-6 inner">
-        <h4 class="mb10">Powered By</h4>
-        <img src="assets/img/poweredby.svg" style="width:80%;">
-      </div>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <div class="container inner">
-      <p class="pull-left">© <script>document.write(new Date().getFullYear());</script> BlackMagic Hockey Club. All Rights Reserved.</p>
-      <ul class="footer-menu pull-right">
-        <li><a href="#">Refund Policies</a></li>
-        <li><a href="#">Privacy Policy</a></li>
-        <li><a href="#">Terms &amp; Conditions</a></li>
-      </ul>
-    </div>
-  </div>
-</footer>
+<div id="site-footer"></div>
+</body>
+</html>
 
 <!-- JS libs -->
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
@@ -133,6 +81,5 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-hover-dropdown/2.2.1/bootstrap-hover-dropdown.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jasny-bootstrap@3.1.3/dist/js/jasny-bootstrap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/geedmo/yamm3/yamm/yamm.min.js"></script>
+<script src="assets/js/calendar-google.js"></script>
 <script src="assets/js/main.js"></script>
-</body>
-</html>
