@@ -1,0 +1,21 @@
+<!doctype html>
+<meta charset="utf-8">
+<h1>Calendar API test</h1>
+<pre id="out">Loading…</pre>
+<script>
+const CAL_ID = "46e8437662cba189d8bb65bd2c03923c20f23b0cdea4af105709cb3e951120b4@group.calendar.google.com";
+const API_KEY = "AIzaSyBScT2OoOX_TJ1jSGNmBVx8VHkxdaWzbzs"; // replace with your new key
+const url = new URL(`https://www.googleapis.com/calendar/v3/calendars/${encodeURIComponent(CAL_ID)}/events`);
+url.search = new URLSearchParams({
+  singleEvents: "true",
+  orderBy: "startTime",
+  timeMin: new Date().toISOString(),
+  maxResults: "5",
+  key: API_KEY
+});
+fetch(url).then(r => r.json()).then(j => {
+  document.getElementById('out').textContent = JSON.stringify(j, null, 2);
+}).catch(e => {
+  document.getElementById('out').textContent = e.toString();
+});
+</script>
